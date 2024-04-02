@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={pjs.className}>
+      <body className="pb-24 h-screen overflow-hidden">
         <Providers>
           <Navbar />
           {children}
