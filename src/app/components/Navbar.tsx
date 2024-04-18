@@ -1,10 +1,11 @@
-'use client';
+'use client'; // we made this a client component since we have to make use of useState
 
 import Dropdown from './Dropdown';
 import { useState } from 'react';
 
-const Navbar = () => {
-  const [show, setShow] = useState<boolean>(false);
+export default function Navbar() {
+  const [show, setShow] = useState<boolean>(false); // this will manage the state of the show variable
+
   return (
     <nav className="bg-white border flex h-24">
       <div className="flex-none w-[18.75rem] border-r-2 flex items-center pl-[2.12rem]">
@@ -32,6 +33,4 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
