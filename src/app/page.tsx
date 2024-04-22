@@ -6,6 +6,7 @@ import { db } from '../utils/firebaseConfig';
 import { useEffect, useState } from 'react';
 import { getSession } from 'next-auth/react';
 import { data } from '../utils/data';
+import AddAndEditBoardModal from './components/AddAndEditBoardModal';
 
 const Home = () => {
   const [userDetails, setUserDetails] = useState<{ [key: string]: any }>();
@@ -49,6 +50,7 @@ const Home = () => {
     <main className="flex h-full">
       <Sidebar />
       <BoardTasks />
+      <AddAndEditBoardModal />
     </main>
   );
 };
