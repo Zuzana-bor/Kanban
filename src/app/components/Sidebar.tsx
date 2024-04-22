@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
+import { openAddAndEditBoardModal } from '@component/redux/features/appSlice';
 import { useFetchDataFromDbQuery } from '@component/redux/services/apiSlice';
 import { setCurrentBoardName } from '@component/redux/features/appSlice';
+
 import { useAppDispatch } from '@component/redux/hooks';
 
 export default function Sidebar() {
@@ -48,7 +50,10 @@ export default function Sidebar() {
           )}
         </>
       )}
-      <button className="flex items-center space-x-2 pl-[2.12rem] py-3">
+      <button
+        onClick={() => dispatch(openAddAndEditBoardModal('Add New Board'))}
+        className="flex items-center space-x-2 pl-[2.12rem] py-3"
+      >
         <p className="text-base font-bold capitalize text-main-purple">
           + Create New Board
         </p>
